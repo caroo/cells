@@ -1,5 +1,8 @@
 require 'test_helper'
 require 'generators/rails/cell_generator'
+require 'fileutils'
+
+FileUtils::mkdir_p File.expand_path(File.join(File.dirname(__FILE__), 'dummy', 'tmp', 'cache')) # cache directory is missing for some reason
 
 class CellGeneratorTest < Rails::Generators::TestCase
   destination File.join(Rails.root, "tmp")
